@@ -26,6 +26,10 @@ class BaseController {
 			$view->view=$view;
 		else
 			$view->view=($this->app->controller).DS.($this->app->action);
+		
+		if(!empty($this->layout))
+			$view->layout=$this->layout;
+		
 		$view->data=$this->data;
 		$view->render();
 	}

@@ -3,10 +3,16 @@ class User extends BaseModel
 {
 	function __construct()
 	{
-		
+		parent::__construct();
 	}
 	public function getUsers()
 	{
-		return array(array(1,"Rahul","Sonar","sonar.soni@gmail.com"));
+		$users=$this->db->get_results("SELECT * FROM users");
+		return $users;
+	}
+	public function getUser($id)
+	{
+		$user=$this->db->get_results("SELECT * FROM users where id=".$id);
+		return $user;
 	}
 }
