@@ -1,9 +1,16 @@
 <?php
-class UsersController
+class UsersController extends BaseController
 {
-	function add($a)
+	public function __construct()
 	{
-		echo $a;
-		//echo "We are here";
+		parent::__construct();
+		$this->loadModel('User');
+	}
+	function admin_add()
+	{
+		
+		$users=$this->User->getUsers();
+		$this->set("users",$users);
+		
 	}
 }
