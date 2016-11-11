@@ -23,7 +23,7 @@ class UsersController extends BaseController
 	{
 		
 		$user=$this->User->getUser($id);
-		$this->set("user",$user[0]);
+		$this->set("user",$user);
 		
 	}
 }

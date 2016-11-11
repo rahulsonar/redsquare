@@ -30,6 +30,3 @@ define('DEFAULT_ACTION','index');
 
 $rs=new RedSquare();
 $rs->application();
-
-
-

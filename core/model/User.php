@@ -12,7 +12,7 @@ class User extends BaseModel
 	}
 	public function getUser($id)
 	{
-		$user=$this->db->get_results("SELECT * FROM users where id=".$id);
+		$user=$this->db->get_row("SELECT * FROM users where id=".$id);
 		return $user;
 	}
 }

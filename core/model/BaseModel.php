@@ -3,8 +3,8 @@ class BaseModel {
 	
 	protected $db;
 	public function __construct() {
-		
-		$this->db = new ezSQL_mysql(DB_USER,DB_PASSWORD,DB_NAME,DB_HOST);
+		if(empty($this->db))
+		$this->db=Dbconnect::connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 	}
 	
 }
